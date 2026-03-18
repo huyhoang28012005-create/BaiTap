@@ -132,9 +132,25 @@ x = [1, 2, 3, 4]
 y = [1, 4, 9, 16]
 
 plt.plot(x, y)
-
 plt.xlabel("X")
 plt.ylabel("Y")
 plt.title("Simple Plot")
-
 plt.show()
+
+# BÀI 2: List Comprehension (chia hết cho 3 và 5)
+numbers = [x for x in range(1, 101) if x % 3 == 0 and x % 5 == 0]
+print(numbers)
+
+
+# BÀI 3: Generator( số nguyên tố từ 1 → 20 )
+def la_so_nguyen_to(n):
+    if n < 2: return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0: return False
+    return True
+
+gen_nguyen_to = (x for x in range(1, 21) if la_so_nguyen_to(x))
+
+print("Số nguyên tố thứ nhất:", next(gen_nguyen_to)) 
+print("Số nguyên tố thứ hai:", next(gen_nguyen_to))  
+print("Số nguyên tố thứ ba:", next(gen_nguyen_to))   
